@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace SprykerTest\Zed\SalesServicePoint;
 
 use Codeception\Actor;
+use Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint;
 use Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery;
-use Propel\Runtime\Collection\ObjectCollection;
 
 /**
  * Inherited Methods
@@ -30,9 +30,9 @@ use Propel\Runtime\Collection\ObjectCollection;
  *
  * @SuppressWarnings(\SprykerTest\Zed\SalesServicePoint\PHPMD)
  */
-class SalesServicePointBusinessTester extends Actor
+class SalesServicePointCommunicationTester extends Actor
 {
-    use _generated\SalesServicePointBusinessTesterActions;
+    use _generated\SalesServicePointCommunicationTesterActions;
 
     /**
      * @return void
@@ -45,18 +45,22 @@ class SalesServicePointBusinessTester extends Actor
     }
 
     /**
+     * @param int $idSalesOrderItem
+     *
+     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint|null
+     */
+    public function findSalesOrderItemServicePoint(int $idSalesOrderItem): ?SpySalesOrderItemServicePoint
+    {
+        return $this->getSalesOrderItemServicePointQuery()
+            ->filterByFkSalesOrderItem($idSalesOrderItem)
+            ->findOne();
+    }
+
+    /**
      * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery
      */
     public function getSalesOrderItemServicePointQuery(): SpySalesOrderItemServicePointQuery
     {
         return SpySalesOrderItemServicePointQuery::create();
-    }
-
-    /**
-     * @return \Propel\Runtime\Collection\ObjectCollection<\Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint>
-     */
-    public function getSalesOrderItemServicePointEntities(): ObjectCollection
-    {
-        return $this->getSalesOrderItemServicePointQuery()->find();
     }
 }
