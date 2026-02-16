@@ -30,7 +30,7 @@ interface SalesServicePointEntityManagerInterface
     ): SalesOrderItemServicePointTransfer;
 
     /**
-     * @param list<int> $salesOrderItemIds
+     * @param array<int> $salesOrderItemIds
      *
      * @return void
      */
