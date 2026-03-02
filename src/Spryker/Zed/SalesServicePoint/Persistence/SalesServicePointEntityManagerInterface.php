@@ -11,20 +11,10 @@ use Generated\Shared\Transfer\SalesOrderItemServicePointTransfer;
 
 interface SalesServicePointEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     public function createSalesOrderItemServicePoint(
         SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
     ): SalesOrderItemServicePointTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     public function saveSalesOrderItemServicePointByFkSalesOrderItem(
         SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
     ): SalesOrderItemServicePointTransfer;

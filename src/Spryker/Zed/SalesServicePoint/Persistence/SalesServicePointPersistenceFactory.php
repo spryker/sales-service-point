@@ -17,17 +17,11 @@ use Spryker\Zed\SalesServicePoint\Persistence\Propel\Mapper\SalesServicePointMap
  */
 class SalesServicePointPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery
-     */
     public function getSalesOrderItemServicePointQuery(): SpySalesOrderItemServicePointQuery
     {
         return SpySalesOrderItemServicePointQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesServicePoint\Persistence\Propel\Mapper\SalesServicePointMapper
-     */
     public function createSalesServicePointMapper(): SalesServicePointMapper
     {
         return new SalesServicePointMapper();

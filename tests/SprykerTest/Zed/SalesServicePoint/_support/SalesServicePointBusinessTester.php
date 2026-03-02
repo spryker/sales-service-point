@@ -34,9 +34,6 @@ class SalesServicePointBusinessTester extends Actor
 {
     use _generated\SalesServicePointBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderItemServicePointDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -44,9 +41,6 @@ class SalesServicePointBusinessTester extends Actor
         );
     }
 
-    /**
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery
-     */
     public function getSalesOrderItemServicePointQuery(): SpySalesOrderItemServicePointQuery
     {
         return SpySalesOrderItemServicePointQuery::create();

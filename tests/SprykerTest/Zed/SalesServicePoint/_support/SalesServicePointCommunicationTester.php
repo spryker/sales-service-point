@@ -34,9 +34,6 @@ class SalesServicePointCommunicationTester extends Actor
 {
     use _generated\SalesServicePointCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderItemServicePointDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -44,11 +41,6 @@ class SalesServicePointCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint|null
-     */
     public function findSalesOrderItemServicePoint(int $idSalesOrderItem): ?SpySalesOrderItemServicePoint
     {
         return $this->getSalesOrderItemServicePointQuery()
@@ -56,9 +48,6 @@ class SalesServicePointCommunicationTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery
-     */
     public function getSalesOrderItemServicePointQuery(): SpySalesOrderItemServicePointQuery
     {
         return SpySalesOrderItemServicePointQuery::create();

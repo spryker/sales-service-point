@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderItemServicePointCollectionResponseTransf
 
 interface SalesOrderItemServicePointDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionDeleteCriteriaTransfer $salesOrderItemServicePointCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionResponseTransfer
-     */
     public function deleteSalesOrderItemServicePointCollection(
         SalesOrderItemServicePointCollectionDeleteCriteriaTransfer $salesOrderItemServicePointCollectionDeleteCriteriaTransfer
     ): SalesOrderItemServicePointCollectionResponseTransfer;

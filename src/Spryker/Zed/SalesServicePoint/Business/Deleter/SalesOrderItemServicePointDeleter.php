@@ -13,18 +13,10 @@ use Spryker\Zed\SalesServicePoint\Persistence\SalesServicePointEntityManagerInte
 
 class SalesOrderItemServicePointDeleter implements SalesOrderItemServicePointDeleterInterface
 {
-    /**
-     * @param \Spryker\Zed\SalesServicePoint\Persistence\SalesServicePointEntityManagerInterface $salesServicePointEntityManager
-     */
     public function __construct(protected SalesServicePointEntityManagerInterface $salesServicePointEntityManager)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionDeleteCriteriaTransfer $salesOrderItemServicePointCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionResponseTransfer
-     */
     public function deleteSalesOrderItemServicePointCollection(
         SalesOrderItemServicePointCollectionDeleteCriteriaTransfer $salesOrderItemServicePointCollectionDeleteCriteriaTransfer
     ): SalesOrderItemServicePointCollectionResponseTransfer {

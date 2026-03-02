@@ -39,9 +39,6 @@ class ExpandOrderItemsWithServicePointTest extends Unit
      */
     protected SalesServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -50,9 +47,6 @@ class ExpandOrderItemsWithServicePointTest extends Unit
         $this->tester->ensureSalesOrderItemServicePointDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExpandOrderItemsWithServicePoint(): void
     {
         // Arrange
@@ -85,9 +79,6 @@ class ExpandOrderItemsWithServicePointTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotExpandOrderItemsWithServicePoint(): void
     {
         // Arrange
@@ -101,11 +92,6 @@ class ExpandOrderItemsWithServicePointTest extends Unit
         $this->assertEmpty($itemsTransfers[0]->getSalesOrderItemServicePoint());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SaveOrderTransfer
-     */
     protected function createOrderWithItem(ItemTransfer $itemTransfer): SaveOrderTransfer
     {
         $storeTransfer = $this->tester->haveStore([StoreTransfer::NAME => 'DE']);

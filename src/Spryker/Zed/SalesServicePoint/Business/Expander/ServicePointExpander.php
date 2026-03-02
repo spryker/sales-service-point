@@ -19,9 +19,6 @@ class ServicePointExpander implements ServicePointExpanderInterface
      */
     protected SalesServicePointRepositoryInterface $salesServicePointRepository;
 
-    /**
-     * @param \Spryker\Zed\SalesServicePoint\Persistence\SalesServicePointRepositoryInterface $salesServicePointRepository
-     */
     public function __construct(SalesServicePointRepositoryInterface $salesServicePointRepository)
     {
         $this->salesServicePointRepository = $salesServicePointRepository;

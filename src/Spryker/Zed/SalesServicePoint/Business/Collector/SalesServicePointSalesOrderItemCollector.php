@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer;
 
 class SalesServicePointSalesOrderItemCollector implements SalesServicePointSalesOrderItemCollectorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer
-     */
     public function collect(
         OrderTransfer $orderTransfer,
         SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer

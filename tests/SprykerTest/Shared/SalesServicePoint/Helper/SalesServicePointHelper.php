@@ -41,11 +41,6 @@ class SalesServicePointHelper extends Module
         return $salesOrderItemServicePointTransfer;
     }
 
-    /**
-     * @param int $idSalesOrderItemServicePoint
-     *
-     * @return void
-     */
     protected function deleteSalesOrderItemServicePoint(int $idSalesOrderItemServicePoint): void
     {
         $salesOrderItemServicePointEntity = $this->getSalesOrderItemServicePointQuery()
@@ -56,9 +51,6 @@ class SalesServicePointHelper extends Module
         }
     }
 
-    /**
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery
-     */
     protected function getSalesOrderItemServicePointQuery(): SpySalesOrderItemServicePointQuery
     {
         return SpySalesOrderItemServicePointQuery::create();

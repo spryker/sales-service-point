@@ -23,17 +23,11 @@ use Spryker\Zed\SalesServicePoint\Business\Saver\SalesOrderItemServicePointsSave
  */
 class SalesServicePointBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesServicePoint\Business\Expander\ServicePointExpanderInterface
-     */
     public function createServicePointExpander(): ServicePointExpanderInterface
     {
         return new ServicePointExpander($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\SalesServicePoint\Business\Saver\SalesOrderItemServicePointsSaverInterface
-     */
     public function createSalesOrderItemServicePointsSaver(): SalesOrderItemServicePointsSaverInterface
     {
         return new SalesOrderItemServicePointsSaver(
@@ -42,17 +36,11 @@ class SalesServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesServicePoint\Business\Deleter\SalesOrderItemServicePointDeleterInterface
-     */
     public function createSalesOrderItemServicePointDeleter(): SalesOrderItemServicePointDeleterInterface
     {
         return new SalesOrderItemServicePointDeleter($this->getEntityManager());
     }
 
-    /**
-     * @return \Spryker\Zed\SalesServicePoint\Business\Collector\SalesServicePointSalesOrderItemCollectorInterface
-     */
     public function createSalesServicePointSalesOrderItemCollector(): SalesServicePointSalesOrderItemCollectorInterface
     {
         return new SalesServicePointSalesOrderItemCollector();

@@ -14,12 +14,6 @@ use Propel\Runtime\Collection\Collection;
 
 class SalesServicePointMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
-     * @param \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint $salesOrderItemServicePointEntity
-     *
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint
-     */
     public function mapSalesOrderItemServicePointTransferToSalesOrderItemServicePointEntity(
         SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer,
         SpySalesOrderItemServicePoint $salesOrderItemServicePointEntity
@@ -51,12 +45,6 @@ class SalesServicePointMapper
         return $salesOrderItemServicePointCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePoint $salesOrderItemServicePointEntity
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     public function mapSalesOrderItemServicePointEntityToSalesOrderItemServicePointTransfer(
         SpySalesOrderItemServicePoint $salesOrderItemServicePointEntity,
         SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer

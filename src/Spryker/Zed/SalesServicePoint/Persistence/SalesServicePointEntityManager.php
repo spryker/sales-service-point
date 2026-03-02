@@ -20,11 +20,6 @@ class SalesServicePointEntityManager extends AbstractEntityManager implements Sa
 {
     use ActiveRecordBatchProcessorTrait;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     public function createSalesOrderItemServicePoint(
         SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
     ): SalesOrderItemServicePointTransfer {
@@ -42,11 +37,6 @@ class SalesServicePointEntityManager extends AbstractEntityManager implements Sa
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     public function saveSalesOrderItemServicePointByFkSalesOrderItem(
         SalesOrderItemServicePointTransfer $salesOrderItemServicePointTransfer
     ): SalesOrderItemServicePointTransfer {
@@ -83,11 +73,6 @@ class SalesServicePointEntityManager extends AbstractEntityManager implements Sa
             ->delete();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     protected function createSalesOrderItemServicePointTransfer(ItemTransfer $itemTransfer): SalesOrderItemServicePointTransfer
     {
         $servicePointTransfer = $itemTransfer->getServicePointOrFail();

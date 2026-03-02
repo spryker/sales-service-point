@@ -43,9 +43,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
      */
     protected SalesServicePointCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->tester->ensureSalesOrderItemServicePointDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotUpdateAnyServicePoints(): void
     {
         // Arrange
@@ -71,9 +65,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertSame(0, $this->tester->getSalesOrderItemServicePointQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateServicePoint(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertSalesOrderItemServicePointEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateServicePoint(): void
     {
         // Arrange
@@ -112,9 +100,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertSalesOrderItemServicePointEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteServicePoint(): void
     {
         // Arrange
@@ -135,9 +120,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertNull($this->tester->findSalesOrderItemServicePoint($quoteTransfer->getItems()->offsetGet(0)->getIdSalesOrderItemOrFail()));
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenIdSalesOrderItemIsNotSet(): void
     {
         // Arrange
@@ -157,9 +139,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         (new ServicePointSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenServicePointKeyIsNotSet(): void
     {
         // Arrange
@@ -179,9 +158,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         (new ServicePointSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenServicePointNameIsNotSet(): void
     {
         // Arrange
@@ -201,11 +177,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         (new ServicePointSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function assertSalesOrderItemServicePointEntity(QuoteTransfer $quoteTransfer): void
     {
         $itemTransfer = $quoteTransfer->getItems()->offsetGet(0);
@@ -219,11 +190,6 @@ class ServicePointSalesOrderItemCollectionPostUpdatePluginTest extends Unit
         $this->assertSame($servicePointTransfer->getName(), $salesOrderItemServicePointEntity->getName());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer|null $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function createOrder(?ServicePointTransfer $servicePointTransfer = null): QuoteTransfer
     {
         $quoteTransfer = (new QuoteBuilder())

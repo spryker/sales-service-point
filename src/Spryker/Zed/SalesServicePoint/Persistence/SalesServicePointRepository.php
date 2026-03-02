@@ -17,11 +17,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class SalesServicePointRepository extends AbstractRepository implements SalesServicePointRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointCriteriaTransfer $salesOrderItemServicePointCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionTransfer
-     */
     public function getSalesOrderItemServicePointCollection(
         SalesOrderItemServicePointCriteriaTransfer $salesOrderItemServicePointCriteriaTransfer
     ): SalesOrderItemServicePointCollectionTransfer {
@@ -39,12 +34,6 @@ class SalesServicePointRepository extends AbstractRepository implements SalesSer
             );
     }
 
-    /**
-     * @param \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery $salesOrderItemServicePointQuery
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointCriteriaTransfer $salesOrderItemServicePointCriteriaTransfer
-     *
-     * @return \Orm\Zed\SalesServicePoint\Persistence\SpySalesOrderItemServicePointQuery
-     */
     protected function applySalesOrderItemServicePointFilters(
         SpySalesOrderItemServicePointQuery $salesOrderItemServicePointQuery,
         SalesOrderItemServicePointCriteriaTransfer $salesOrderItemServicePointCriteriaTransfer

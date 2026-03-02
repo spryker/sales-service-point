@@ -36,9 +36,6 @@ class SaveSalesOrderItemServicePointsFromQuoteTest extends Unit
      */
     protected SalesServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,9 +43,6 @@ class SaveSalesOrderItemServicePointsFromQuoteTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotPersistAnyServicePointsForItemsFromQuote(): void
     {
         // Arrange
@@ -73,9 +67,6 @@ class SaveSalesOrderItemServicePointsFromQuoteTest extends Unit
         $this->assertSame(0, $this->tester->getSalesOrderItemServicePointQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldPersistOneServicePointForItemsFromQuote(): void
     {
         // Arrange

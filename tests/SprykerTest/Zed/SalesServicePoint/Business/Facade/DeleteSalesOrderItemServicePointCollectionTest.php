@@ -35,9 +35,6 @@ class DeleteSalesOrderItemServicePointCollectionTest extends Unit
      */
     protected SalesServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,9 +43,6 @@ class DeleteSalesOrderItemServicePointCollectionTest extends Unit
         $this->tester->ensureSalesOrderItemServicePointDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testDeletesSalesOrderItemServicePointEntitiesBySalesOrderItemIds(): void
     {
         // Arrange
@@ -74,9 +68,6 @@ class DeleteSalesOrderItemServicePointCollectionTest extends Unit
         $this->assertSame($salesOrderItemServicePointTransfer->getIdSalesOrderItemServicePoint(), $salesOrderItemServicePointEntities[0]->getIdSalesOrderItemServicePoint());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteSalesOrderItemServicePointEntitiesWhenNoEntitiesFoundBySalesOrderItemIds(): void
     {
         // Arrange
@@ -98,9 +89,6 @@ class DeleteSalesOrderItemServicePointCollectionTest extends Unit
         $this->assertSame($salesOrderItemServicePointTransfer->getIdSalesOrderItemServicePoint(), $salesOrderItemServicePointEntities[0]->getIdSalesOrderItemServicePoint());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteSalesOrderItemServicePointEntitiesWhenNoCriteriaConditionsAreSet(): void
     {
         // Arrange

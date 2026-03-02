@@ -22,21 +22,12 @@ class SalesOrderItemServicePointsSaver implements SalesOrderItemServicePointsSav
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesServicePoint\Persistence\SalesServicePointEntityManagerInterface $salesServicePointEntityManager
-     * @param \Spryker\Zed\SalesServicePoint\Business\Deleter\SalesOrderItemServicePointDeleterInterface $salesOrderItemServicePointDeleter
-     */
     public function __construct(
         protected SalesServicePointEntityManagerInterface $salesServicePointEntityManager,
         protected SalesOrderItemServicePointDeleterInterface $salesOrderItemServicePointDeleter
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveSalesOrderItemServicePointsFromQuote(QuoteTransfer $quoteTransfer): void
     {
         $salesOrderItemServicePointCollectionTransfer = $this->createSalesOrderItemServicePointCollectionTransfer($quoteTransfer);
@@ -48,11 +39,6 @@ class SalesOrderItemServicePointsSaver implements SalesOrderItemServicePointsSav
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateSalesOrderItemServicePoints(
         SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
     ): SalesOrderItemCollectionResponseTransfer {
@@ -98,11 +84,6 @@ class SalesOrderItemServicePointsSaver implements SalesOrderItemServicePointsSav
         return $salesOrderItemServicePointTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionTransfer $salesOrderItemServicePointCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionTransfer
-     */
     protected function executeUpdateSalesOrderItemServicePointsTransaction(
         SalesOrderItemServicePointCollectionTransfer $salesOrderItemServicePointCollectionTransfer
     ): SalesOrderItemServicePointCollectionTransfer {
@@ -117,11 +98,6 @@ class SalesOrderItemServicePointsSaver implements SalesOrderItemServicePointsSav
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionTransfer
-     */
     protected function createSalesOrderItemServicePointCollectionTransfer(
         QuoteTransfer $quoteTransfer
     ): SalesOrderItemServicePointCollectionTransfer {
@@ -140,11 +116,6 @@ class SalesOrderItemServicePointsSaver implements SalesOrderItemServicePointsSav
         return $salesOrderItemServicePointCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointTransfer
-     */
     protected function createSalesOrderItemServicePointTransfer(ItemTransfer $itemTransfer): SalesOrderItemServicePointTransfer
     {
         $servicePointTransfer = $itemTransfer->getServicePointOrFail();

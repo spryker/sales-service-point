@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderItemServicePointCriteriaTransfer;
 
 interface SalesServicePointRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemServicePointCriteriaTransfer $salesOrderItemServicePointCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemServicePointCollectionTransfer
-     */
     public function getSalesOrderItemServicePointCollection(
         SalesOrderItemServicePointCriteriaTransfer $salesOrderItemServicePointCriteriaTransfer
     ): SalesOrderItemServicePointCollectionTransfer;

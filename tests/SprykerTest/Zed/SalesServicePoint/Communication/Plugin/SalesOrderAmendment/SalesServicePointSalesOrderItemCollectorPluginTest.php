@@ -35,9 +35,6 @@ class SalesServicePointSalesOrderItemCollectorPluginTest extends Unit
      */
     protected SalesServicePointCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testAddsItemWithUpdatedServicePointToItemsToUpdateAndRemovesFromItemsToSkip(): void
     {
         // Arrange
@@ -69,9 +66,6 @@ class SalesServicePointSalesOrderItemCollectorPluginTest extends Unit
         $this->assertCount(1, $updatedSalesOrderAmendmentItemCollectionTransfer->getItemsToUpdate());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotAddItemWithSameServicePointToItemsToUpdateAndDoesNotRemoveFromItemsToSkip(): void
     {
 // Arrange
